@@ -1,7 +1,11 @@
 [
     {
         "name": "Jordan Retro 1",
-        "iamge": "./assets/img/retro1.jpg"
+        "image": "/assets/img/retro1.jpg"
+    },
+    {
+        "name": "Jordan Retro 2",
+        "image": "/assets/img/sneaker-banner.jpg"
     }
 
 ]
