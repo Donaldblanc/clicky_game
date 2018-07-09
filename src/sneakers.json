@@ -4,8 +4,12 @@
         "image": "/assets/img/retro1.jpg"
     },
     {
-        "name": "Jordan Retro 2",
-        "image": "/assets/img/sneaker-banner.jpg"
+        "name": "JORDAN 1 RETRO HI FLYKNIT ",
+        "image": "/assets/img/jordan1_hi_flyknit.jpg"
+    } ,
+    {
+        "name": "AIR JORDAN 1 RETRO RE2PECT ",
+        "image": "/assets/img/jordan1_retro_respect.jpg"
     }
 
 ]
