@@ -56,19 +56,8 @@ selectSneaker = name => {
    this.shuffleArray(sneakers);
 
 }
-
-
   render() {
     return (
-      // <div className="App">
-      //   <header className="App-header">
-      //     <img src={logo} className="App-logo" alt="logo" />
-      //     <h1 className="App-title">Welcome to React</h1>
-      //   </header>
-      //   <p className="App-intro">
-      //     To get started, edit <code>src/App.js</code> and save to reload.
-      //     {console.log(this.state.sneakers.image)}
-      //   </p>
       <Wrapper>
         <Navpills
           banner={this.state.banner}
@@ -83,14 +72,10 @@ selectSneaker = name => {
             name = {sneaker.name}
             image = {sneaker.image}
             selectSneaker = {this.selectSneaker}
-            current_score = {this.state.current_score}
-            
+            current_score = {this.state.current_score} 
           />
-
         ))
       }
-
-
       </Wrapper>
     );
   }
