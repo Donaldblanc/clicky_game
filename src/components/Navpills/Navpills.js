@@ -7,8 +7,11 @@ const Navpills = props => (
         <ul className="nav nav-pills nav-justified" >
         <li><a href="/">Sneaker Game</a></li>
 
-            <li className={props.banner.indexOf('incorrectly') !== -1 ? " desc-incorrect" :
-                props.banner.indexOf('correctly') !== -1 ? "desc-correct" : "desc-normal"}
+            <li className={props.banner.indexOf('incorrectly') !== -1 ? 
+               "desc-incorrect" :
+                props.banner.indexOf('correctly') !== -1 ? 
+                "desc-correct" : 
+                "desc-normal"}
             >
                 {props.banner}
             </li>
@@ -21,3 +24,5 @@ const Navpills = props => (
 );
 
 export default Navpills;
+
+

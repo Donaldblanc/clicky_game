@@ -8,8 +8,8 @@ const SneakerCard = props => (
             <a onClick={() => props.selectSneaker(props.name)}
                 className={props.current_score === 0 ? "style_prevu_kit style_prevu_kit_ex" : "style_prevu_kit"}
             >
-                {console.log(props.name)}
-                {console.log(props.image)}
+                {/* {console.log(props.name)}
+                {console.log(props.image)} */}
                 <img alt={props.name} src={props.image} />
             </a>
         </div>

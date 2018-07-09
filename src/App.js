@@ -33,7 +33,9 @@ selectSneaker = name => {
 
   const findSneaker = this.state.unselected_sneakers.find(item => item.name === name);
 
+
   if(findSneaker === undefined){
+    console.log (findSneaker);
       this.setState({
         banner: " Sorry you guess incorrectly",
         highest_score: (this.state.current_score > this.state.highest_score ) ? this.state.current_score : this.state.highest_score,
@@ -44,9 +46,9 @@ selectSneaker = name => {
   }else{
 
     const newSneaker = this.state.unselected_sneakers.filter(item => item.name !== name);
-
+    console.log(`correct ${newSneaker}`);
     this.setState({
-      message: "Huray! you guessed correctly",
+      banner: "You guessed correctly!",
       current_score : this.state.current_score + 1,
       sneakers : sneakers,
       unselected_sneakers: newSneaker
