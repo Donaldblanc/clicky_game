@@ -20,44 +20,38 @@ class App extends Component {
   componentDidMount() {
   }
 
-
   shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
+      let j = Math.floor(Math.random() * (i + 1));
 
-        [array[i], array[j]] = [array[j], array[i]];
+      [array[i], array[j]] = [array[j], array[i]];
     }
-}
+  }
 
-selectSneaker = name => {
-
-  const findSneaker = this.state.unselected_sneakers.find(item => item.name === name);
-
-
-  if(findSneaker === undefined){
-    console.log (findSneaker);
+  selectSneaker = name => {
+    const findSneaker = this.state.unselected_sneakers.find(item => item.name === name);
+    if (findSneaker === undefined) {
+      // console.log (findSneaker);
       this.setState({
-        banner: " Sorry you guess incorrectly",
-        highest_score: (this.state.current_score > this.state.highest_score ) ? this.state.current_score : this.state.highest_score,
-        current_score: 0, 
-        sneakers : sneakers,
+        banner: " Sorry you guess incorrectly try again",
+        highest_score: (this.state.current_score > this.state.highest_score) ? this.state.current_score : this.state.highest_score,
+        current_score: 0,
+        sneakers: sneakers,
         unselected_sneakers: sneakers
       })
-  }else{
-
-    const newSneaker = this.state.unselected_sneakers.filter(item => item.name !== name);
-    console.log(`correct ${newSneaker}`);
-    this.setState({
-      banner: "You guessed correctly!",
-      current_score : this.state.current_score + 1,
-      sneakers : sneakers,
-      unselected_sneakers: newSneaker
-    })
+    } else {
+      const newSneaker = this.state.unselected_sneakers.filter(item => item.name !== name);
+      // console.log(`correct ${newSneaker}`);
+      this.setState({
+        banner: "Hurary! You guessed correctly!",
+        current_score: this.state.current_score + 1,
+        sneakers: sneakers,
+        unselected_sneakers: newSneaker
+      })
+    }
+    this.shuffleArray(sneakers);
 
   }
-   this.shuffleArray(sneakers);
-
-}
   render() {
     return (
       <Wrapper>
@@ -67,17 +61,17 @@ selectSneaker = name => {
           highest_score={this.state.highest_score}
         />
         <Title />
-      {
-        this.state.sneakers.map(sneaker =>( 
-          
-          <SneakerCard 
-            name = {sneaker.name}
-            image = {sneaker.image}
-            selectSneaker = {this.selectSneaker}
-            current_score = {this.state.current_score} 
-          />
-        ))
-      }
+        {
+          this.state.sneakers.map((sneaker, index) => (
+            <SneakerCard
+              key={index}
+              name={sneaker.name}
+              image={sneaker.image}
+              selectSneaker={this.selectSneaker}
+              current_score={this.state.current_score}
+            />
+          ))
+        }
       </Wrapper>
     );
   }
